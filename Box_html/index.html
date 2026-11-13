@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: pink;
+}
+
+.browser {
+    width: 600px;
+    height:max-content;
+    background: black;
+    border: 10px solid black;
+    box-sizing: border-box;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.red {
+    background: orangered;
+}
+
+.green {
+    background: green;
+}
+
+.blue {
+    background: skyblue;
+}
+
+.search-bar {
+    flex: 1;
+    height: 25px;
+    background: white;
+}
+
+.row-1 {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.box-yellow {
+    flex: 1;
+    height: 50px;
+    background: goldenrod;
+}
+
+.box-cyan {
+    flex: 1;
+    height: 50px;
+    background: skyblue;
+}
+
+.content {
+    display: flex;
+    gap: 10px;
+}
+
+.left-box {
+    flex: 1;
+    height: 160px;
+    background: orangered;
+}
+
+.right-section {
+    flex: 1;
+    /* width:100px; */
+    border: 8px solid pink;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 8px;
+}
+
+.top-right {
+    height: 70px;
+    background: brown;
+}
+
+.bottom-right {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+}
+
+.bottom-left {
+    flex: 1;
+    background: greenyellow;
+}
+
+.bottom-orange {
+    flex: 1;
+    background: sienna;
+}
+</style>
+</head>
+<body>
+
+<div class="browser">
+    <div class="top-bar">
+        <div class="circle red"></div>
+        <div class="circle green"></div>
+        <div class="circle blue"></div>
+        <div class="search-bar"></div>
+    </div>
+
+    <div class="row-1">
+        <div class="box-yellow"></div>
+        <div class="box-cyan"></div>
+    </div>
+
+    <div class="content">
+        <div class="left-box"></div>
+
+        <div class="right-section">
+            <div class="top-right"></div>
+
+            <div class="bottom-right">
+                <div class="bottom-left"></div>
+                <div class="bottom-orange"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

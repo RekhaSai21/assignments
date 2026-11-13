@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: pink;
+    padding: 30px;
+}
+
+/* Main Gallery */
+.gallery {
+    height:600px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.card {
+    background: brown;
+    padding: 14px;
+    border-radius: 4px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.dots {
+    display: flex;
+    gap: 6px;
+    margin-right: 12px;
+}
+
+.dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dots span:nth-child(1) { background: #ff6b6b; }
+.dots span:nth-child(2) { background: #f7b267; }
+.dots span:nth-child(3) { background: #2ec4b6; }
+
+.bar {
+    flex: 1;
+    height: 10px;
+    background: #f4f4f4;
+    border-radius: 2px;
+}
+
+.layout {
+    display: grid;
+    gap: 10px;
+    height: 170px;
+}
+
+/* Colors */
+.c1 { background: #ff5f57; } 
+.c2 { background: #f9845b; } 
+.c3 { background: #f4a261; } 
+.c4 { background: #0fa88a; } 
+.c5 { background: #2db9a3; }
+.c6 { background: #45cbb7; }
+
+/* --Layout 1 --*/
+.layout1 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+
+/* --Layout 2 ---*/
+.layout2 {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.layout2 .a { grid-column: 1; grid-row: 1; }
+.layout2 .b { grid-column: 2; grid-row: 1 / 3; }
+.layout2 .c { grid-column: 1; grid-row: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+/* --Layout 3 --*/
+.layout3 {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 0.6fr 1fr 0.5fr;
+}
+.layout3 .top { grid-column: 1 / 3; }
+.layout3 .bottom { grid-column: 1 / 3; }
+
+/* --Layout 4 --*/
+.layout4 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.8fr 1fr 0.4fr;
+}
+.layout4 .middle {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    grid-column: 1 / 3;
+}
+.layout4 .bottom {
+    grid-column: 1 / 3;
+}
+
+/* --Layout 5 --*/
+.layout5 {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/* --Layout 6 --*/
+.layout6 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+.layout6 .big {
+    grid-column: 1 / 3;
+    grid-row: 3 / 5;
+}
+.layout6 .wide {
+    grid-column: 1 / 4;
+    grid-row: 5;
+}
+
+/* --Layout 7 --*/
+.layout7 {
+    grid-template-columns: 1fr 0.9fr;
+    grid-template-rows: 0.5fr 1.5fr;
+}
+.layout7 .left {
+    grid-row: 1 / 3;
+}
+.layout7 .right {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+/* --Layout 8 --*/
+.layout8 {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 0.8fr 0.8fr 1fr;
+}
+.layout8 .wide {
+    grid-column: 3 / 6;
+}
+.layout8 .bottom {
+    grid-column: 1 / 6;
+}
+
+/* --Layout 9 --*/
+.layout9 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr;
+}
+.layout9 .top {
+    grid-column: 1 / 3;
+}
+.layout9 .right {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="gallery">
+
+    <!-- Layout 1 -->
+    <div class="card">
+        <div class="header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="bar"></div>
+        </div>
+        <div class="layout layout1">
+            <div class="c1"></div><div class="c2"></div><div class="c3"></div>
+            <div class="c4"></div><div class="c5"></div><div class="c6"></div>
+        </div>
+    </div>
+
+    <!-- Layout 2 -->
+    <div class="card">
+        <div class="header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="bar"></div>
+        </div>
+        <div class="layout layout2">
+            <div class="a c1"></div>
+            <div class="b c3"></div>
+            <div class="c">
+                <div class="c4"></div>
+                <div class="c5"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Layout 3 -->
+    <div class="card">
+        <div class="header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="bar"></div>
+        </div>
+        <div class="layout layout3">
+            <div class="top c3"></div>
+            <div class="c4"></div>
+            <div class="c1"></div>
+            <div class="bottom c5"></div>
+        </div>
+    </div>
+
+    <!-- Layout 4 -->
+    <div class="card">
+        <div class="header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="bar"></div>
+        </div>
+        <div class="layout layout4">
+            <div class="c2"></div>
+            <div class="c1"></div>
+            <div class="middle">
+                <div class="c4"></div>
+                <div class="c5"></div>
+            </div>
+            <div class="bottom c3"></div>
+        </div>
+    </div>
+
+    <!-- Layout 5 -->
+    <div class="card">
+        <div class="header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="bar"></div>
+        </div>
+        <div class="layout layout5">
+            <div class="c4"></div><div class="c2"></div><div class="c5"></div><div class="c1"></div><div class="c6"></div><div class="c2"></div>
+            <div class="c3"></div><div class="c4"></div><div class="c2"></div><div class="c5"></div><div class="c3"></div><div class="c1"></div>
+            <div class="c4"></div><div class="c1"></div><div class="c6"></div><div class="c2"></div><div class="c4"></div><div class="c6"></div>
+        </div>
+    </div>
+
+    <!-- Layout 6 -->
+    <div class="card">
+        <div class="header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="bar"></div>
+        </div>
+        <div class="layout layout6">
+            <div class="c1"></div><div class="c4"></div><div class="c3"></div><div class="c2"></div>
+            <div class="c2"></div><div class="c5"></div><div class="c4"></div><div class="c6"></div>
+            <div class="big c3"></div><div class="c6"></div><div class="c1"></div>
+            <div class="c4"></div>
+            <div class="wide c6"></div>
+        </div>
+    </div>
+
+    <!-- Layout 7 -->
+    <div class="card">
+        <div class="header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="bar"></div>
+        </div>
+        <div class="layout layout7">
+            <div class="left c1"></div>
+            <div class="c6"></div>
+            <div class="right">
+                <div class="c5"></div>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                    <div class="c4"></div>
+                    <div class="c3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Layout 8 -->
+    <div class="card">
+        <div class="header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="bar"></div>
+        </div>
+        <div class="layout layout8">
+            <div class="c1"></div><div class="c3"></div><div class="c6"></div><div class="c5"></div><div class="c4"></div>
+            <div class="c2"></div><div class="c1"></div><div class="wide c2"></div>
+            <div class="bottom c6"></div>
+        </div>
+    </div>
+
+    <!-- Layout 9 -->
+    <div class="card">
+        <div class="header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="bar"></div>
+        </div>
+        <div class="layout layout9">
+            <div class="top c3"></div>
+            <div class="c4"></div>
+            <div class="right">
+                <div class="c6"></div>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                    <div class="c1"></div>
+                    <div class="c3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

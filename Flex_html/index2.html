@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wedding Search Box</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+    }
+
+    .search-box {
+        position: relative;
+        width: 280px;
+        padding: 40px 30px 50px;
+        border: 2px solid red;
+        background: transparent;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .search-box .title {
+        position: absolute;
+        top: -16px;
+        left: 50%;
+        background: white;
+        padding: 0 15px;
+        font-size: 16px;
+        color: black;
+    }
+
+    .search-box::before,
+    .search-box::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        width: 55px;
+        height: 2px;
+        background: white;
+    }
+
+    .search-box::before {
+        left: 15px;
+    }
+
+    .search-box::after {
+        right: 15px;
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    select {
+        width: 100%;
+        padding: 10px 25px 10px 10px;
+        font-size: 15px;
+        color: white;
+        border: none;
+        border-bottom: 2px solid red;
+        background: transparent;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .form-group::after {
+        content: "∨";
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        color: black;
+        font-size: 14px;
+        pointer-events: none;
+    }
+
+    .search-btn {
+        position: absolute;
+        bottom: -18px;
+        left: 50%;
+        background: red;
+        color: white;
+        border: none;
+        padding: 10px 28px;
+        border-radius: 25px;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 0 2px 6px black;
+    }
+
+    .search-btn:hover {
+        background: red;
+    }
+</style>
+</head>
+<body>
+
+<div class="search-box">
+    <div class="title">I am looking for</div>
+
+    <div class="form-group">
+        <select>
+            <option selected disabled>Wedding Vendors</option>
+            <option>Photographers</option>
+            <option>Decorators</option>
+            <option>Caterers</option>
+            <option>Makeup Artists</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option selected disabled>In City</option>
+            <option>Hyderabad</option>
+            <option>Chennai</option>
+            <option>Bangalore</option>
+            <option>Mumbai</option>
+        </select>
+    </div>
+
+    <button class="search-btn">Search</button>
+</div>
+
+</body>
+</html>
